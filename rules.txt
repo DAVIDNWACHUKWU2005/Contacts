@@ -1,0 +1,2 @@
+two error messages : one says input cannot be empty and please enter a valid email
+please enter a valid input
