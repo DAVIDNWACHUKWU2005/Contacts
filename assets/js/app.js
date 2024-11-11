@@ -41,13 +41,12 @@ class Contact {
     }
 }
 
-// Validate email format
+
 function isValidEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;// Validate email format
     return emailPattern.test(email);
 }
 
-// Display error messages
 function displayError(errorType) {
     contactCountMessage.classList.add("hidden");
 
@@ -60,7 +59,7 @@ function displayError(errorType) {
     }
 }
 
-// Hide error messages
+
 function hideErrors() {
     emailError.classList.add("hidden");
     formatError.classList.add("hidden");
@@ -91,7 +90,7 @@ function validateInput(input) {
     return { name, city, email };
 }
 
-// Add contact to the list
+
 function addContact() {
     const input = inputElement.value;
     const validatedInput = validateInput(input);
@@ -100,7 +99,7 @@ function addContact() {
         return;
     }
 
-    hideErrors(); // Hide errors after successful validation
+    hideErrors(); 
 
     const { name, city, email } = validatedInput;
     const newContact = new Contact(name, city, email);
@@ -110,7 +109,6 @@ function addContact() {
     listContacts();
 }
 
-// Update contact count display function
 function updateContactCount() {
     contactCountMessage.textContent = `Total Contacts: ${contacts.length}`;
     contactCountMessage.classList.remove("hidden");
