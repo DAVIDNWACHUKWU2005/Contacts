@@ -60,6 +60,7 @@ function displayError(errorType) {
     }
 }
 
+// Hide error messages
 function hideErrors() {
     emailError.classList.add("hidden");
     formatError.classList.add("hidden");
@@ -90,6 +91,7 @@ function validateInput(input) {
     return { name, city, email };
 }
 
+// Add contact to the list
 function addContact() {
     const input = inputElement.value;
     const validatedInput = validateInput(input);
@@ -98,17 +100,17 @@ function addContact() {
         return;
     }
 
-    hideErrors();
+    hideErrors(); // Hide errors after successful validation
 
     const { name, city, email } = validatedInput;
     const newContact = new Contact(name, city, email);
     
-    contacts.push(newContact);
+    contacts.unshift(newContact);
     inputElement.value = "";
     listContacts();
 }
 
-
+// Update contact count display function
 function updateContactCount() {
     contactCountMessage.textContent = `Total Contacts: ${contacts.length}`;
     contactCountMessage.classList.remove("hidden");
