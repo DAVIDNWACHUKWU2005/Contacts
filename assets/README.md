@@ -1,0 +1,1 @@
+This simple page saves and deletes on click a contacts name, city and email.
